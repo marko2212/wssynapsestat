@@ -1,0 +1,30 @@
+{
+	"name": "ds_opendata_json",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_openData_stat",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"putanja": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "Source"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "@dataset().putanja",
+					"type": "Expression"
+				}
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}
